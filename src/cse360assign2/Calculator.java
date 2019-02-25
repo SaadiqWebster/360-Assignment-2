@@ -8,19 +8,22 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * Class Constructor
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0"; //set to 0 as a string not an int
 	}
 	
 	/**
 	 * returns the current total
+	 * @return total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -29,6 +32,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history += " + "+value;
 	}
 	
 	/**
@@ -37,6 +41,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history += " - "+value;
 	}
 	
 	/**
@@ -45,6 +50,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history += " * "+value;
 	}
 	
 	/**
@@ -53,13 +59,14 @@ public class Calculator {
 	 */
 	public void divide (int value) {
 		total = total / value;
+		history += " / "+value;
 	}
 	
 	/**
 	 * summarizes all the method calls
-	 * @return a strng
+	 * @return history
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
